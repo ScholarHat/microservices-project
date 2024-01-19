@@ -3,23 +3,23 @@
 using System;
 using System.Collections.Generic;
 
-namespace DAL.Database.Entities
+namespace AuthService.Database.Entities;
+
+public partial class User
 {
-    public partial class User
-    {
-        public User()
-        {
-            Roles = new HashSet<Role>();
-        }
+    public int Id { get; set; }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string PhoneNumber { get; set; }
-        public bool EmailConfirmed { get; set; }
-        public DateTime CreatedDate { get; set; }
+    public string Name { get; set; }
 
-        public virtual ICollection<Role> Roles { get; set; }
-    }
+    public string Email { get; set; }
+
+    public string Password { get; set; }
+
+    public string PhoneNumber { get; set; }
+
+    public bool EmailConfirmed { get; set; }
+
+    public DateTime CreatedDate { get; set; }
+
+    public virtual ICollection<Role> Roles { get; set; } = new List<Role>();
 }

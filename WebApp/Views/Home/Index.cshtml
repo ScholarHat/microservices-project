@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebApp.Models.ProductViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Product List</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4 mb-3">
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img-top img-fluid" alt="@item.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <a href="#" class="btn btn-primary">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

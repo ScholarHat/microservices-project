@@ -3,18 +3,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace DAL.Database.Entities
+namespace AuthService.Database.Entities;
+
+public partial class Role
 {
-    public partial class Role
-    {
-        public Role()
-        {
-            Users = new HashSet<User>();
-        }
+    public int Id { get; set; }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
-    }
+    public virtual ICollection<User> Users { get; set; } = new List<User>();
 }
