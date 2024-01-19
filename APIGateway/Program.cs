@@ -26,5 +26,5 @@ builder.Services.AddAuthentication()
 
 var app = builder.Build();
 
-app.UseOcelot();
+app.UseOcelot().Wait();
 app.Run();

@@ -2,6 +2,7 @@ using AuthService.Services.Implementations;
 using AuthService.Services.Interfaces;
 using DAL.Database;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 

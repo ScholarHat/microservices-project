@@ -63,18 +63,18 @@
       "UpstreamPathTemplate": "/catalog/swagger.json",
       "UpstreamHttpMethod": [ "GET" ]
     },
-    {
-      "DownstreamPathTemplate": "/api/catalog/{everything}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7091
-        }
-      ],
-      "UpstreamPathTemplate": "/catalog/{everything}",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
+    //{
+    //  "DownstreamPathTemplate": "/api/catalog/{everything}",
+    //  "DownstreamScheme": "https",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 7091
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/catalog/{everything}",
+    //  "UpstreamHttpMethod": [ "GET" ]
+    //},
     {
       "DownstreamPathTemplate": "/api/catalog/{everything}",
       "DownstreamScheme": "https",
@@ -91,7 +91,7 @@
         "Roles": "Admin"
       },
       "UpstreamPathTemplate": "/catalog/{everything}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE" ]
     },
     {
       "DownstreamPathTemplate": "/api/auth/{everything}",
