@@ -1,3 +1,4 @@
+using ApiGatewayOcelot;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
@@ -8,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("ocelot.json");
 builder.Services.AddOcelot();
 
-var CatalogAuthKey = builder.Configuration["Keys:Catalog"];
+//OcelotConfig.ConfigureOcelotServices(builder.Services, builder.Configuration);
+
+var CatalogAuthKey = builder.Configuration["Keys:CatalogService"];
 builder.Services.AddAuthentication()
     .AddJwtBearer(CatalogAuthKey, options =>
     {
