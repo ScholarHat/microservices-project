@@ -1,7 +1,4 @@
 ﻿using Ocelot.DependencyInjection;
-using System.Collections.Generic;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
 
 namespace ApiGatewayOcelot
 {

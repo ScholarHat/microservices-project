@@ -1,4 +1,4 @@
-namespace PaymentService
+namespace CartService
 {
     public class WeatherForecast
     {
