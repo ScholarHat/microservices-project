@@ -45,18 +45,25 @@ namespace AuthService.Services.Implementation
         {
             try
             {
-                user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-
-                User model = new User
-                {
-                    Name = user.Name,
-                    Email = user.Email,
-                    Password = user.Password,
-                    PhoneNumber = user.PhoneNumber
-                };
-                _db.Users.Add(model);
-                _db.SaveChanges();
-                return true;
+               Role userRole = _db.Roles.FirstOrDefault(r => r.Name == user.Role);
+               if (userRole != null)
+               {
+                   User user = new User
+                   {
+                       Name = model.Name,
+                       Email = model.Email,
+                       Password = model.Password,
+                       PhoneNumber = model.PhoneNumber,
+                       EmailConfirmed = false,
+                       CreatedDate = DateTime.Now
+                   };
+                   user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                   user.Roles.Add(userRole);
+                   _db.Users.Add(user);
+                   _db.SaveChanges();
+                   return true;
+               }
+               return false;
             }
             catch (Exception ex)
             {
