@@ -1,4 +1,3 @@
-using ApiGatewayOcelot;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
