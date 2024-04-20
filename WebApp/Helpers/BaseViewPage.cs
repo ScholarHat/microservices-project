@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc.Razor;
 using Newtonsoft.Json;
 using System.Security.Claims;
 using WebApp.Models;
 
-namespace WebApp.Areas.User.Controllers
+namespace WebApp.Helpers
 {
-    [Area("User")]
-    public class BaseController : Controller
+    public abstract class BaseViewPage<TModel> : RazorPage<TModel>
     {
         public UserViewModel CurrentUser
         {

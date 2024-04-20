@@ -7,13 +7,13 @@
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-sm-4 mb-3">
+        <div class="col-sm-3 mb-3">
             <div class="card">
                 <img src="@item.ImageUrl" class="card-img-top img-fluid" alt="@item.Name">
                 <div class="card-body">
                     <h5 class="card-title">@item.Name</h5>
                     <p class="card-text">@item.Description</p>
-                    <a href="#" class="btn btn-primary">Add To Cart</a>
+                    <a href="javascript:void(0)" onclick="AddToCart('@item.ProductId','@item.Name','@item.UnitPrice',1)" class="btn btn-primary">Add To Cart</a>
                 </div>
             </div>
         </div>

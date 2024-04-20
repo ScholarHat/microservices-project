@@ -41,11 +41,11 @@ namespace AuthService.Services.Implementation
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public bool CreateUser(SignUpModel user)
+        public bool CreateUser(SignUpModel model)
         {
             try
             {
-               Role userRole = _db.Roles.FirstOrDefault(r => r.Name == user.Role);
+               Role userRole = _db.Roles.FirstOrDefault(r => r.Name == model.Role);
                if (userRole != null)
                {
                    User user = new User
